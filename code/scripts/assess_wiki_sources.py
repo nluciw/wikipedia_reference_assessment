@@ -3,9 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 from utils import parse_html, gen_report
 
-arg_parser = argparse.ArgumentParser()
+arg_parser = argparse.ArgumentParser(description='Generate a report of the references in a Wikipedia article')
 arg_parser.add_argument('wiki_link', help='link to the Wikipedia article', type=str)
-arg_parser.add_argument('--output_report', help='name of the report to output')
+arg_parser.add_argument('--output_report', default='wiki-article_report', help='name of the report to output')
 
 args = arg_parser.parse_args()
 
