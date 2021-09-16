@@ -13,18 +13,27 @@ def get_references(soup):
     citations = []
     links = []
 
+    # Go through all list items in the ordered list
     for ref in references.findAll('li'):
-        name = ref.find(class_='reference-text').text
+        ref_text = ref.find(class_='reference-text')
 
+        # Sometimes they don't use the reference-text class
+        if ref_text is not None:
+            citations.append(ref_text.text)
+        else:
+            # Sometimes they use a cite class
+            for subref in ref.findAll('cite'):
+                citations.append(subref.text)
+
+        # Sometimes there's no link
         try:
             link = ref.find(class_='external text').get('href')
         except:
             link = 'NA'
-
-        citations.append(name)
         
         links.append(link)
 
+    # Put into DataFrame for easier handling
     df = pd.DataFrame({'Ref #':range(1,1+len(citations)), 
                        'Citation': citations, 
                        'Link': links})
