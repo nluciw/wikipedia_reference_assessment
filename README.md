@@ -18,3 +18,6 @@ optional arguments:
   --output_report OUTPUT_REPORT
                         name of the report to output
 ```
+
+Known bugs:
+* can't handle articles with bulleted lists under one reference (e.g. ref #499 of the United States article). I imagine this is bad Wikipedia practice anyway?
