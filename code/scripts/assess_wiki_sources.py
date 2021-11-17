@@ -19,4 +19,6 @@ references = parse_html.get_references(soup)
 
 report = gen_report.Report(filename = args.output_report + '.md')
 
+references.to_csv(args.output_report + '.csv')
+
 report.gen_report(title, references, use_hyperlinks=True)
