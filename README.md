@@ -1,7 +1,7 @@
 ## Wikipedia Reference Assessment
 Authors: Joshua Mogyoros and Nicholas Luciw
 
-#### The main goal of this project is to assess the quality of the references in a given Wikipedia article.
+#### The main goal of this project is to assess the quality and biases of the references in a given Wikipedia article.
 
 Current usage:
 ```
@@ -17,4 +17,3 @@ optional arguments:
   -h, --help            show this help message and exit
   --output_report OUTPUT_REPORT
                         name of the report to output
-```
